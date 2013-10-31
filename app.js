@@ -10,7 +10,7 @@ var app = express()
 function compile(str, path) {
   return stylus(str)
     .set('filename', path)
-    .use(nib());
+    .use(nib);
 }
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
