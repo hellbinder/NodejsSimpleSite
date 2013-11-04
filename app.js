@@ -1,12 +1,15 @@
 ﻿/// <reference path="node-vsdoc.js" />
 /* Add Module Dependencies */
-
+var socket = require('socket.io');
 var express = require("express")
+, app = express.createServer()
+, server = app.listen(3000)
 , stylus = require("stylus")
 , nib = require("nib");
 
+var io = socket.listen(server);
 
-var app = express()
+
 function compile(str, path) {
   return stylus(str)
     .set('filename', path)
@@ -28,4 +31,12 @@ app.get('/', function (req, res) {
   res.render('index',
     { title: 'Home' });
 });
-app.listen(3000);
+
+ //server.listen(3000);
+
+io.sockets.on('connection', function (socket) {
+  socket.emit('message', { message: 'Welcome to chat' });
+  socket.on('send', function (data) {
+    io.sockets.emit('message',data);
+  });
+});
