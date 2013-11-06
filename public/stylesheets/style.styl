@@ -10,6 +10,8 @@ global-reset()
 main-color = #fa5b4d
 background-color = #faf9f0
 
+h1,h2,h3,h4,h5
+  font-family 'Quicksand'
 body
   font-family 'Georgia'
   background-color background-color
@@ -17,7 +19,7 @@ body
 
 header
   font-family 'Quicksand'
-  padding 50px 10px
+  padding 34px 10px
   color #fff
   font-size 25px
   text-align center
@@ -27,8 +29,8 @@ header
    * variable and the `darken` function
    */
   background-color main-color
-  border-bottom 1px solid darken(main-color, 30%)
   text-shadow 0px -1px 0px darken(main-color, 30%)
+  border-bottom 1px solid darken(main-color, 30%)
 
 .container
   width 1200px
@@ -37,14 +39,14 @@ header
 
 .main-content
   float left
-  width 800px
+  width 75%
 
   p
     margin-bottom 20px
 
 .sidebar
   float left
-  width 400px
+  width 25%
 
   .widget
 
@@ -53,6 +55,7 @@ header
      * prefixes here. Nib will
      * add them for us
      */
+    padding 5px
     border-radius 3px
     border 1px solid #ccc
     margin-left 20px
@@ -81,3 +84,51 @@ footer
   border-top 1px dotted #ccc
   padding-top 5px
   font-size 13px
+
+// Chat Content
+#chatContent
+  font-family 'Quicksand'
+  border 1px solid #ccc
+  height 300px
+  radius 5px
+  overflow auto
+  padding 5px
+  background-color darken(main-color,50%)
+  color #FFFFFF
+  text-shadow: 1px 1px 2px #000
+
+// Navigation
+ul#nav
+  list-style: none !important
+  margin 0
+  padding 0
+  background-color main-color
+
+  li
+    float left
+    list-style-type: none
+
+    a
+      transition: color .5s, border-left .5s;
+      text-decoration none
+      display block
+      padding 1px 5px
+      margin-right 15px
+      background-color main-color
+      color #FFFFFF
+      text-shadow: 1px 1px 2px #000
+      font-family 'Quicksand'
+      border-left background-color 5px solid
+
+    :hover 
+        color #333
+        border-left darken(background-color, 30%) 5px solid
+
+
+
+.clearfix
+  clear both
+.left
+  float left
+.right 
+  float right

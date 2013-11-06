@@ -26,10 +26,16 @@ app.use(stylus.middleware(
 ));
 app.use(express.static(__dirname + '/public'));
 
+//Routes
 
 app.get('/', function (req, res) {
   res.render('index',
     { title: 'Home' });
+});
+
+app.get('/chat', function (req, res) {
+  res.render('chat',
+    {title: 'Chat'});
 });
 
  //server.listen(3000);

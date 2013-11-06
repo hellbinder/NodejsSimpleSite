@@ -1,28 +1,28 @@
 ﻿extend layout
 block content
   p
-    | Vivamus hendrerit arcu sed erat molestie
-    | vehicula. Sed auctor neque eu tellus
-    | rhoncus ut eleifend nibh porttitor. Ut in.
+    | This is just a sample site that includes
+    | all the different things I've learnt from
+    | node.js and related modules.
+    | It's nothing big but will give me an idea
+    | in the future if I ever need it.
   p
-    | Donec congue lacinia dui, a porttitor
-    | lectus condimentum laoreet. Nunc eu
-    | ullamcorper orci. Quisque eget odio ac
-    | lectus vestibulum faucibus eget in metus.
-    | In pellentesque faucibus vestibulum. Nulla
-    | at nulla justo, eget luctus tortor.
-  .controls
+    | Node.js is a software platform that is used 
+    | to build scalable network (especially server-side) applications. 
+    | Node.js utilizes JavaScript as its scripting language, 
+    | and achieves high throughput via non-blocking I/O and a single-threaded event loop.
+
+block sidebar
+  .widget
+    h1 Chat!
+    p
+      | Chat with somone here for no reason!
+      br
+      | Should be fun.
+
+    .controls
       input.field#field(style='width:350px;')
       input.send#send(type='button', value='send')
       br
       br
-      #chatContent(style="border:1px solid #ccc; height:50px; radius:5px;")
-block sidebar
-  .widget
-    h1 Widget
-    p
-      | Sed auctor neque eu tellus rhoncus ut
-      | eleifend nibh porttitor. Ut in nulla enim.
-    p
-      | Vivamus hendrerit arcu sed erat molestie
-      | vehicula.
+      #chatContent

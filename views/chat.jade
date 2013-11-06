@@ -1,0 +1,14 @@
+extend layout
+block content
+  script(type="text/javascript", src="js/chat.js")
+  script(src='/socket.io/socket.io.js')
+  .controls
+    input.field#field(style='width:350px;')
+    input.send#send(type='button', value='send')
+    br
+    br
+    #chatContent
+block sidebar
+  .widget
+    h3 
+     | Users connected.
