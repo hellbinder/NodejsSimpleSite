@@ -11,6 +11,7 @@ var io = socket.listen(server);
 
 
 function compile(str, path) {
+  console.log(str);
   return stylus(str)
     .set('filename', path)
     .use(nib);

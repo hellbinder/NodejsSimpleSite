@@ -2,14 +2,29 @@
 html
   include header
   body
-    header
-      h1 Sample node.js site.
-      include nav
-    .clearfix
+  nav.navbar.navbar-inverse(role='navigation')
     .container
-      .main-content
+      .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='/') Nodejs at a glance.
+
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li
+            a(href='/') Home
+          li
+            a(href='/chat') Chat
+          li
+            a(href='draw') Draw
+          li
+            a(href='#contact') Contact
+  .container
+    .row
+      .col-lg-8
         block content
-      .sidebar
+      .col-lg-4
         block sidebar
-    footer
-      p Running on node with Express, Jade and Stylus
