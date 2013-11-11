@@ -1,0 +1,77 @@
+@import url("http://fonts.googleapis.com/css?family=Quicksand");
+/*
+ * Store the main color and
+ * background color as variables
+ */
+ul.nav:after {
+  z-index: -1;
+  width: 150%;
+  height: 100%;
+  position: absolute;
+  top: -45%;
+  left: -25%;
+  display: block;
+  content: "";
+  background: rgba(255,255,255,0.1);
+  border-radius: 100%;
+}
+ul.nav li {
+  transition: color 0.5s, border-left 0.5s;
+  border-left: #faf9f0 5px solid;
+}
+ul.nav li:hover {
+  border-left: #fdada6 5px solid;
+  color: #fff;
+}
+ul.nav li a {
+  padding-right: 25px;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+.navbar-inverse .navbar-nav>.active>a {
+  background-color: #fa5b4d;
+}
+.navbar-inverse .navbar-nav>.active>a:hover {
+  background-color: #fa5b4d;
+}
+#chatEntries {
+  border: 1px solid #808080;
+  border-radius: 5px;
+  background-color: #fa5b4d;
+  margin-bottom: 20px;
+  height: auto;
+  min-height: 200px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.message {
+  overflow: hidden;
+  padding: 0 12px;
+  color: #000;
+  background: #ababab;
+/* Old browsers */
+  float: left;
+  margin-left: 0;
+  width: 80%;
+  -webkit-animation-name: flip;
+  -webkit-animation-duration: 500ms;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.btn-group {
+  float: right;
+}
+#messageInput {
+  width: 830px;
+  margin-left: 20px;
+}
+#entries {
+  margin-top: 10px;
+}
+@-webkit-keyframes flip {
+  0% {
+    -webkit-transform: rotateX(90deg);
+  }
+
+  100% {
+    -webkit-transform: rotateX(0deg);
+  }
+}

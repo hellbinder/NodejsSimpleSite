@@ -1,0 +1,87 @@
+@import url('http://fonts.googleapis.com/css?family=Quicksand')
+
+/*
+ * Store the main color and
+ * background color as variables
+ */
+main-color = #fa5b4d
+background-color = #faf9f0
+
+// Navigation
+
+ul.nav
+  &:after
+    z-index -1
+    width:150%;
+    height:100%;
+    position:absolute;
+    top:-45%;
+    left:-25%;
+    display:block;
+    content:"";
+    background:rgba(255,255,255,0.1);
+    border-radius:100%;
+  li
+    transition: color .5s, border-left .5s
+    border-left background-color 5px solid
+    &:hover 
+      border-left lighten(main-color, 50%) 5px solid
+      color #FFFFFF
+    a
+      padding-right 25px
+      color #FFFFFF
+      text-shadow 1px 1px 2px #000
+      // font-family 'Quicksand'
+
+ //Override hover effect 
+.navbar-inverse .navbar-nav>.active>a
+  background-color main-color
+  &:hover 
+    background-color main-color
+
+
+// Chat Controls
+
+#chatEntries
+  border: 1px solid grey
+  border-radius: 5px
+  background-color: main-color
+  margin-bottom: 20px
+  height: auto
+  min-height:200px
+  box-shadow: 0 0 10px rgba(0,0,0,.5)
+
+.message
+  overflow: hidden
+  padding: 0 12px
+  color: black
+  background: #ababab /* Old browsers */
+  float: left
+  margin-left: 0
+  width: 80%
+  -webkit-animation-name: flip
+  -webkit-animation-duration: 500ms
+  border-bottom:1px solid rgba(0, 0, 0, .1)
+
+.btn-group  
+  float: right
+
+#messageInput
+  width: 830px
+  margin-left: 20px
+
+#entries 
+  margin-top: 10px
+
+@-webkit-keyframes flip {
+        0% {
+                -webkit-transform: rotateX( 90deg );
+        }
+        100% {
+                -webkit-transform: rotateX( 0deg );
+        }
+}
+
+
+
+
