@@ -43,35 +43,31 @@ ul.nav
 // Chat Controls
 
 #chatEntries
-  border: 1px solid grey
-  border-radius: 5px
-  background-color: main-color
-  margin-bottom: 20px
-  height: auto
+  border 1px solid grey
+  border-radius 5px
+  background-color #FAFAFA
+  margin-bottom 20px
+  height auto
   min-height:200px
   box-shadow: 0 0 10px rgba(0,0,0,.5)
 
-.message
+#messages
   overflow: hidden
-  padding: 0 12px
+  padding 0 12px
   color: black
-  background: #ababab /* Old browsers */
-  float: left
-  margin-left: 0
-  width: 80%
-  -webkit-animation-name: flip
-  -webkit-animation-duration: 500ms
-  border-bottom:1px solid rgba(0, 0, 0, .1)
-
-.btn-group  
-  float: right
+  // background #ababab /* Old browsers */
+  width: 100%
+  -webkit-animation-name flip
+  -webkit-animation-duration 500ms
+  border-bottom:0
+  min-height 300px
+  padding 7px
 
 #messageInput
-  width: 830px
-  margin-left: 20px
+  min-width 65%
+  max-width 65%
+  height 45px
 
-#entries 
-  margin-top: 10px
 
 @-webkit-keyframes flip {
         0% {

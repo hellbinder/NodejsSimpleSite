@@ -3,45 +3,35 @@ block content
   script(type="text/javascript", src="js/chat.js")
   script(src='/socket.io/socket.io.js')
   .h3 Welcome to a sample chat application.
-  #chatEntries
-  .row#entries
+  .row
     .col-lg-12
-      input(type='text')#messageInput
-      .btn-group
-        button.btn#submit(data-loading-text="Send") Send
-        button.btn.dropdown-toggle(data-toggle="dropdown")
-          span.caret
-        ul.dropdown-menu
-          li
-            a#edit(href="#modalPseudo", data-toggle="modal")
-              i.icon-user
-              | Change name
-          li
-            a#info(href="#modalInfos", data-toggle="modal")
-              i.icon-info-sign
-              | Infos
-  #nbUsersDiv
-    p There is 
-      span#nbUsers
-        |  connected user(s).
-
-      .modal.fade#modalPseudo
-        .modal-header
-          h3 Choose a name
-        .modal-body
-          p Choose a name :
-          input(type='text')#pseudoInput
-          .alert.alert-error#alertPseudo
-            | This name is already used ! Choose another one.
-        .modal-footer
-          button.btn.btn-primary#pseudoSubmit Go to the chat
-  #chat-content
-  .controls
-    input.field#field(style='width:350px;')
-    input.send#send(type='button', value='send')
-    br
-    br
-block sidebar
+      #chatEntries
+        #messages
+        .row
+          #entries.col-lg-12
+            #form
+              .input-group.input-group-sm(style ="width:100%")
+                input.form-control#messageInput(type='text', placeholder='Type Message...')
+                button#send.btn.btn-lg(type='button')
+                    span.glyphicon.glyphicon-send
+                    |   Send
+  #modalUsername.modal
+    .modal-dialog
+      .modal-content
+        form
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
+            h4.modal-title Welcome to the chat
+          .modal-body
+            p Please enter your username:
+            input#username(type="text", required="required").form-control
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal') Close
+            button#btnUsername.btn.btn-primary(type='button') Enter
+  block sidebar
   .widget
     h4
      | Members
+
+
+

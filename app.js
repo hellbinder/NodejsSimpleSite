@@ -42,7 +42,7 @@ app.get('/chat', function (req, res) {
  //server.listen(3000);
 
 io.sockets.on('connection', function (socket) {
-  socket.emit('message', { message: 'Welcome to chat' });
+  socket.emit('message', {username: "Server", message: 'Welcome to chat' });
   socket.on('send', function (data) {
     io.sockets.emit('message',data);
   });
