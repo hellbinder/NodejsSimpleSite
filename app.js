@@ -39,11 +39,14 @@ app.get('/chat', function (req, res) {
     {title: 'Chat'});
 });
 
- //server.listen(3000);
+ //server.listen(3000); 
 
 io.sockets.on('connection', function (socket) {
-  socket.emit('message', {username: "Server", message: 'Welcome to chat' });
+  socket.emit('message', {username: "Server", message: 'Welcome to chat ' });
   socket.on('send', function (data) {
     io.sockets.emit('message',data);
   });
+});
+io.sockets.on('disconnect', function () {
+  io.socket.emit('message', {username: "Server", message: 'A User has disconected ' });
 });

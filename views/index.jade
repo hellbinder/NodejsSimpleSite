@@ -1,5 +1,7 @@
 ﻿extend layout
 block content
+  script
+    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
   h1 Introduction
   p
     | This is just a sample site that includes
@@ -14,11 +16,9 @@ block content
     | and achieves high throughput via non-blocking I/O and a single-threaded event loop.
 
 block sidebar
-    h1 Chat!
+    h1 Some sidebar information
     p
-      | Chat with somone here for no reason!
-      br
-      | Should be fun.
+      | Might so a weather widget. Who knows!
 
     .controls
       input.field#field(style='width:350px;')

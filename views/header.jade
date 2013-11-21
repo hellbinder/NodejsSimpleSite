@@ -3,7 +3,6 @@ head
   //- link(rel='stylesheet', href='/stylesheets/style.css')
   meta(charset='utf-8')
   meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
-
   script(src="http://codeorigin.jquery.com/jquery-1.10.2.js")
   // Latest compiled and minified JavaScript 
   script(src='//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js')
@@ -18,9 +17,9 @@ head
   link(rel='stylesheet', href='/stylesheets/custom.css')
 
   script(src='http://localhost:3000/socket.io/socket.io.js')
-
+  
   //Add active class to list item depending on request.
-  script(type="text/javascript")
+  script
     $(function(){
       var path = window.location.pathname;
       $("nav li a[href='" + path.toLowerCase() + "']").parents('li').addClass('active');
