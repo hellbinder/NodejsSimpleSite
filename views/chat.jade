@@ -7,27 +7,28 @@ block content
     .col-lg-12
       #chatEntries
         #messages
-        .row
-          #entries.col-lg-12
-            #form
-              .input-group.input-group-sm(style ="width:100%")
-                input.form-control#messageInput(type='text', placeholder='Type Message...')
-                button#send.btn.btn-lg(type='button')
-                    span.glyphicon.glyphicon-send
-                    |   Send
+  .row
+    #entries.col-lg-12
+      form#messageForm
+        .input-group.input-group-sm(style ="width:100%")
+          input.form-control#messageInput(type='text', placeholder='Type Message...')
+          button#send.btn.btn-lg(type='submit')
+            span.glyphicon.glyphicon-send
+              |   Send
   #modalUsername.modal
     .modal-dialog
       .modal-content
-        form
-          .modal-header
-            button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
-            h4.modal-title Welcome to the chat
-          .modal-body
+        .modal-header
+          button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
+          h4.modal-title Welcome to the chat
+        .modal-body
+          form#usernameForm(action="http://www.yahoo.com", method="get")
             p Please enter your username:
             input#username(type="text", required="required").form-control
-          .modal-footer
-            button.btn.btn-default(type='button', data-dismiss='modal') Close
-            button#btnUsername.btn.btn-primary.btn-default(type='button') Enter
+            .modal-footer
+              input#btnUsername.btn.btn-primary(type='submit') Enter
+              button.btn.btn-default(type='button', data-dismiss='modal') Close
+
   block sidebar
   .widget
     h4
