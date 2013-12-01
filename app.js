@@ -3,7 +3,7 @@
 var socket = require('socket.io');
 var express = require("express")
 , app = express.createServer()
-, server = app.listen(3000)
+, server = app.listen(process.env.PORT || 3000)
 , stylus = require("stylus")
 , nib = require("nib");
 
