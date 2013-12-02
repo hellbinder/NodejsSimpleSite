@@ -9,12 +9,14 @@ function ConnectToChat() {
     socket.on('message', function (data) {
         console.log(data);
         if(data.message) {
-            messages.push([data.username, data.message]);
-            var html = '';
-            for(var i=0; i<messages.length; i++) {
-                html += messages[i][0] +": " + messages[i][1] + '<br />';
-            }
-            content.innerHTML = html;
+            // messages.push([data.username, data.message]);
+            // var html = '';
+            // for(var i=0; i<messages.length; i++) {
+            //     html += messages[i][0] +": " + messages[i][1] + '<br />';
+            // }
+            // content.innerHTML = html;
+            // console.log(messages);
+            CreateMessage(data.username, data.message);
             $(content).animate({
                 scrollTop: content.scrollHeight
             });
@@ -55,3 +57,10 @@ jQuery(document).ready(function($) {
         }
     });
 });
+
+function CreateMessage(username, message)
+{
+    var userMessage = $('<li class="message" style="display:none"><strong>' + username + '</strong>: ' + message + '</li>')
+    $("#messages ul").append(userMessage);
+    userMessage.fadeIn();
+}

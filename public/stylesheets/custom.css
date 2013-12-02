@@ -70,3 +70,13 @@ ul.nav li a {
     -webkit-transform: rotateX(0deg);
   }
 }
+#messages ul {
+  list-style-type: none;
+  padding: 0;
+}
+li.message {
+  padding: 7px;
+  background: #90d4e9;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}

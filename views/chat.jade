@@ -7,6 +7,7 @@ block content
     .col-lg-12
       #chatEntries
         #messages
+          ul
   .row
     #entries.col-lg-12
       form#messageForm
@@ -14,7 +15,7 @@ block content
           input.form-control#messageInput(type='text', placeholder='Type Message...')
           button#send.btn.btn-lg.btn-default(type='submit')
             span.glyphicon.glyphicon-send  Send
-  #modalUsername.modal
+  #modalUsername.modal.fade
     .modal-dialog
       .modal-content
         .modal-header
@@ -29,9 +30,9 @@ block content
               button.btn.btn-default(type='button', data-dismiss='modal') Close
 
   block sidebar
-  .widget
-    h4
-     | Members
+    .widget
+      h4
+       | Members
 
 
 
