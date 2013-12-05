@@ -15,7 +15,7 @@ block content
           input.form-control#messageInput(type='text', placeholder='Type Message...')
           button#send.btn.btn-lg.btn-default(type='submit')
             span.glyphicon.glyphicon-send  Send
-  #modalUsername.modal.fade
+  #usernameModal.modal.fade
     .modal-dialog
       .modal-content
         .modal-header
@@ -29,10 +29,10 @@ block content
               input#btnUsername.btn.btn-primary(type='submit') Enter
               button.btn.btn-default(type='button', data-dismiss='modal') Close
 
-  block sidebar
-    .widget
-      h4
-       | Members
+block sidebar
+  .widget
+    h4
+     | Members
 
 
 
