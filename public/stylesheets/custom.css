@@ -34,6 +34,29 @@ ul.nav li a {
 .navbar-inverse .navbar-nav>.active>a:hover {
   background-color: #fa5b4d;
 }
+#chatWrap {
+  background: #444;
+  padding: 10px;
+  border: 1px solid #000;
+  box-shadow: inset 0 0 2px #fff;
+  border-radius: 8px;
+}
+#chatWrap h4 {
+  color: #fff;
+  padding-top: 1px;
+  padding-bottom: 10px;
+}
+@media (max-width:420px) {
+  #chatWrap {
+    background: #fff;
+    border: none;
+  }
+  #chatWrap h4 {
+    color: #333;
+    padding-top: 0;
+    margin: 0;
+  }
+}
 #chatEntries {
   border: 1px solid #808080;
   border-radius: 5px;
@@ -53,7 +76,7 @@ ul.nav li a {
 }
 #messageInput {
   min-width: 65%;
-  max-width: 65%;
+  max-width: 85%;
   height: 45px;
 }
 @-webkit-keyframes flip {

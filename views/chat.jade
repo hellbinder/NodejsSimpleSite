@@ -2,32 +2,33 @@ extend layout
 block content
   script(type="text/javascript", src="js/chat.js")
   script(src='/socket.io/socket.io.js')
-  .h3 Welcome to a sample chat application.
-  .row
-    .col-lg-12
-      #chatEntries
-        #messages
-          ul
-  .row
-    #entries.col-lg-12
-      form#messageForm
-        .input-group.input-group-sm(style ="width:100%")
-          input.form-control#messageInput(type='text', placeholder='Type Message...')
-          button#send.btn.btn-lg.btn-default(type='submit')
-            span.glyphicon.glyphicon-send  Send
-  #usernameModal.modal.fade
-    .modal-dialog
-      .modal-content
-        .modal-header
-          button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
-          h4.modal-title Welcome to the chat
-        .modal-body
-          form#usernameForm(action="http://www.yahoo.com", method="get")
-            p Please enter your username:
-            input#username(type="text", required="required").form-control
-            .modal-footer
-              input#btnUsername.btn.btn-primary(type='submit') Enter
-              button.btn.btn-default(type='button', data-dismiss='modal') Close
+  #chatWrap
+    h4 Welcome to a sample chat application.
+    #chatWrapper.row
+      .col-lg-12
+        #chatEntries
+          #messages
+            ul
+    .row
+      #entries.col-lg-12
+        form#messageForm
+          .input-group.input-group-sm(style ="width:100%")
+            input.form-control#messageInput(type='text', placeholder='Type Message...')
+            button#send.btn.btn-lg.btn-default(type='submit')
+              span.glyphicon.glyphicon-send  Send
+    #usernameModal.modal.fade
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
+            h4.modal-title Welcome to the chat
+          .modal-body
+            form#usernameForm(action="http://www.yahoo.com", method="get")
+              p Please enter your username:
+              input#username(type="text", required="required").form-control
+              .modal-footer
+                input#btnUsername.btn.btn-primary(type='submit') Enter
+                button.btn.btn-default(type='button', data-dismiss='modal') Close
 
 block sidebar
   .widget

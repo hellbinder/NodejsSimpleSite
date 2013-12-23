@@ -54,7 +54,7 @@ $(document).ready(function() {
   });
 
   //Do for testing
-  // SetUpInitalLogin();
+  SetUpInitalLogin();
 
   //Put custom scrollbar
   // NOT WORKING
