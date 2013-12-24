@@ -1,4 +1,18 @@
-var username, currentUserName, socket;
+Array.prototype.contains = function(k, callback) {
+    var self = this;
+    return (function check(i) {
+        if (i >= self.length) {
+            return callback(false);
+        }
+        if (self[i] === k) {
+            return callback(true);
+        }
+        return process.nextTick(check.bind(null, i+1));
+    }(0));
+};
+
+var username, currentUserName, socket, users;
+users = [];
 function ConnectToChat() {
     var messages = [];
     socket = io.connect();
@@ -29,6 +43,7 @@ function ConnectToChat() {
         socket.emit('send', { username: fromUser, message: text });
     });
     // for (var i = 0; i <= 30; i++) {
+        users.push(username);
         socket.emit('send', {username: "Server", message: 'The user ' + username + ' has connected!' });
     // };
 
@@ -47,14 +62,22 @@ $(document).ready(function() {
       {
         // debugger;
         username = $("#username").val();
-        $('#usernameModal').modal('hide');
-        ConnectToChat();
-        $("#messageInput").focus();
+        //Check if user is already in the list
+        users.contains(username,function(found) {
+          if(found)
+            alert("Username already exists");
+          else
+          {
+            $('#usernameModal').modal('hide');
+            ConnectToChat();
+            $("#messageInput").focus();
+          }
+        });
       }
   });
 
   //Do for testing
-  SetUpInitalLogin();
+  //SetUpInitalLogin();
 
   //Put custom scrollbar
   // NOT WORKING

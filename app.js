@@ -1,5 +1,18 @@
 ﻿/// <reference path="node-vsdoc.js" />
 /* Add Module Dependencies */
+Array.prototype.contains = function(k, callback) {
+    var self = this;
+    return (function check(i) {
+        if (i >= self.length) {
+            return callback(false);
+        }
+        if (self[i] === k) {
+            return callback(true);
+        }
+        return process.nextTick(check.bind(null, i+1));
+    }(0));
+};
+
 var socket = require('socket.io');
 var express = require("express")
 , app = express.createServer()
